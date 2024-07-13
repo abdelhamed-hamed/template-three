@@ -1,0 +1,160 @@
+.landing {
+    height: calc(100vh - 72px);
+    overflow: hidden;
+    position: relative;
+}
+
+/* When Head-content Take A mArgin at max-width767px 
+made a new height of landing
+*/
+@media (max-width:767px) {
+    .landing {
+        height: calc(100vh - 82px);
+
+    }
+}
+
+/* Made Clip Path Using before */
+.landing::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #DDD;
+    top: -95px;
+    left: 0;
+    transform: skewY(-4deg);
+}
+
+.landing .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+}
+
+.container .landing-content {
+    display: flex;
+    justify-content: center;
+}
+
+.container .landing-content .landing-text {
+    width: calc(100% / 2);
+    width: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+
+    & h1 {
+        font-weight: bold;
+        letter-spacing: -1.4px;
+        text-transform: uppercase;
+        margin: 4px 0;
+        font-size: 35px;
+    }
+
+    & p {
+        color: #777;
+        line-height: 1.4;
+        text-transform: capitalize;
+        font-weight: 400;
+        margin: 8px 0;
+    }
+}
+
+/* Edit FOnt Size On Mobile */
+@media (max-width:767px) {
+    .container .landing-content .landing-text h1 {
+        font-size: 14.5px;
+    }
+}
+
+@media (max-width:767px) {
+    .container .landing-content .landing-text p {
+        font-size: 10px;
+    }
+}
+
+/* Edit Width 100% At Meduim And Small Size And Textalign */
+@media (max-width:991px) {
+    .container .landing-content .landing-text {
+        text-align: center;
+        width: 100%
+    }
+}
+
+.container .landing-content img {
+    width: calc(100% / 2);
+    max-width: 100%;
+    animation-name: image-translate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+/* Media to disappear image at max-width 991px */
+@media (max-width:991px) {
+    .container .landing-content img {
+        display: none;
+    }
+}
+
+/* Go DOwn icon */
+.landing .go-down {
+    color: var(--main-color, blue);
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    translate: -50%;
+    font-size: 27px;
+    font-weight: bold;
+    animation-name: bounce;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 2s;
+}
+
+/* Start Animation image */
+@keyframes image-translate {
+
+    0%,
+    50%,
+    100% {
+        translate: 0 0;
+    }
+
+    25% {
+        translate: 0 40px;
+
+    }
+
+    75% {
+        translate: 0 -40px;
+
+    }
+}
+
+/* End Animation image*/
+/* Start Animation icon go-down */
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-15px);
+    }
+
+    60% {
+        transform: translateY(-10px);
+    }
+
+}
+
+/* ENd Animation icon go-down */

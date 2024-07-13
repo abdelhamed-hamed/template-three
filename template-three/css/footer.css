@@ -1,0 +1,211 @@
+.footer {
+    padding: 70px 0px 0px;
+    position: relative;
+    background-color: #191919;
+    --main-color-most-element: #b9b9b9;
+}
+
+.footer .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--main-gap, 40px);
+}
+
+/* Start Edit info  */
+
+.footer .footer-content .info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--main-gap, 40px);
+
+    & h3 {
+        margin: 0;
+        font-size: 30px;
+        color: white;
+        text-transform: capitalize;
+        flex-basis: 100%;
+        font-weight: bold;
+    }
+
+    & .info-links {
+        flex-basis: 100%;
+        display: flex;
+        gap: 17px;
+
+
+        & a {
+            background-color: #313131;
+            padding: 17px;
+            height: fit-content;
+
+            & .footer-icon {
+                font-size: 22px;
+                color: var(--main-color-most-element, white);
+                transition: var(--main-transition, 0.5s);
+            }
+        }
+
+        /* Start Edit hover Of Contact-icon */
+        & a:nth-child(1):hover {
+            background-color: #1877f2;
+        }
+
+        & a:nth-child(2):hover {
+            background-color: #1da1f2;
+        }
+
+
+        & a:nth-child(3):hover {
+            background-color: #ff0000;
+        }
+
+        /* End Edit hover Of Contact-icon */
+
+    }
+
+
+    & p {
+        line-height: var(--main-line-height, 1.7);
+        color: var(--main-color-most-element, white);
+        text-transform: capitalize;
+    }
+}
+
+@media (max-width:767px) {
+    .footer .footer-content .info {
+        & h3 {
+            text-align: center;
+        }
+
+        & .info-links {
+            justify-content: center;
+        }
+
+        & p {
+            text-align: center;
+            margin-bottom: 59px;
+        }
+    }
+}
+
+/* End Edit info  */
+
+/* Start Edit important-link */
+.footer .footer-content .important-link {
+    & ul {
+
+        & li {
+
+            padding: 18px 0;
+            font-size: 15px;
+            border-bottom: 1px solid #444;
+
+            & a {
+                color: var(--main-color-most-element, #DDD);
+                text-transform: capitalize;
+                transition: color var(--main-transition, 0.5s), left 0.3s;
+                position: relative;
+                left: 0;
+            }
+
+
+            & a:before {
+                font-family: 'Font Awesome 6 Free';
+                content: "\F101";
+                font-weight: 900;
+                color: var(--main-color, blue);
+                margin-right: 15px;
+                font-size: 14px;
+            }
+        }
+
+        /* Edit a hover */
+        & li:hover {
+            & a {
+                color: white;
+                left: 5px;
+            }
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .footer .footer-content .important-link ul li {
+        text-align: center;
+    }
+}
+
+/* End Edit important-link */
+
+/* Start Edit adress */
+.footer .footer-content address {
+    & ul {
+
+        & li {
+            display: flex;
+            align-items: baseline;
+            gap: 17px;
+            margin-bottom: 50px;
+
+            & .address-icon {
+                color: var(--main-color);
+                font-size: 26px;
+                align-self: center;
+            }
+
+            & p {
+                margin: 0;
+                color: var(--main-color-most-element, #DDD);
+                font-size: 15px;
+                line-height: var(--main-line-height, 1.7);
+
+                & span {
+                    text-wrap: nowrap;
+                }
+            }
+
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .footer .footer-content address {
+        & ul {
+            & li {
+                flex-direction: column;
+                align-items: center;
+
+                & p {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+/* End Edit adress */
+
+/* Start Edit images */
+.footer .footer-content .images {
+    & img {
+        background: white;
+        width: 78px;
+        max-width: 100%;
+        padding: 2px;
+    }
+}
+
+/* End Edit images */
+
+/* Edit Last p In footer */
+
+.footer>p {
+    color: white;
+    padding: 17px;
+    font-size: 19px;
+    text-align: center;
+    text-transform: capitalize;
+    border-top: 1px solid #444;
+    margin: 49px 0 0;
+    letter-spacing: -0.8px;
+}

@@ -1,0 +1,147 @@
+.works {
+    padding-top: var(--main-paddding-top, 15px);
+    padding-bottom: var(--main-paddding-bottom, 15px);
+    position: relative;
+    background-color: var(--alt-color, #DDD);
+}
+
+.works .container {
+    margin-top: var(--main-margin, 90px);
+
+}
+
+/* Start Edit main-Box With All COntent  */
+
+.works .works-content .main-box {
+    display: flex;
+    align-items: center;
+    gap: 95px;
+}
+
+/* End Edit main-Box With All COntent  */
+
+/* Start Edit Image main-image */
+.works .works-content .main-box>img {
+    max-width: 100%;
+}
+
+/* display none for photo */
+@media (max-width:992px) {
+    .works .works-content .main-box>img {
+        display: none;
+    }
+}
+
+/* End Edit Image main-image */
+
+/* Start Edit All-Boxs*/
+
+.works .works-content .main-box .all-boxs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--main-gap, 40px);
+}
+
+/* End Edit All-Boxs*/
+
+.works .works-content .main-box .internal-box {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+/* Start Edit Box */
+.works .works-content .main-box .internal-box .box {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+@media (max-width:576px) {
+    .works .works-content .main-box .internal-box .box {
+        flex-direction: column;
+    }
+}
+
+/* Start Edit Image IN Box */
+
+.works .works-content .main-box .internal-box .box>img {
+    max-width: 100%;
+    width: 60px;
+    aspect-ratio: 1 / 1;
+}
+
+@media (max-width:576px) {
+    .works .works-content .main-box .internal-box .box>img {
+        margin: 18px;
+    }
+}
+
+/* ENd Edit Image IN Box */
+
+/* Start Edit info */
+
+.works .works-content .main-box .internal-box .box .info {
+    margin-left: 30px;
+    text-transform: capitalize;
+
+
+    /*  Edit h3 */
+    & h3 {
+        font-weight: 600;
+        font-size: 21px;
+        margin-bottom: 0px;
+    }
+
+    /*  Edit p */
+    & p {
+        line-height: var(--main-line-height, 1.8);
+        color: var(--p-color, #777);
+        font-size: 17px;
+    }
+
+
+}
+
+@media (max-width:576px) {
+    .works .works-content .main-box .internal-box .box .info {
+        margin-left: 0;
+        text-align: center;
+    }
+}
+
+/* End Edit info */
+
+/* End Edit Box */
+
+
+/* Start box-before to do layer  */
+
+.works .works-content .main-box .internal-box .box::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    background-color: var(--hover-color, #ddd);
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    transition: var(--main-transition, 0.5s);
+    z-index: -1;
+}
+
+/* start Do hover Effect */
+
+.works .works-content .main-box .internal-box .box:hover:before {
+    width: 100%;
+    height: 100%;
+}
+
+/* End Do hover Effect */
+
+/* ENd box-before to do layer  */

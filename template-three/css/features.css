@@ -1,0 +1,212 @@
+.features {
+    padding-top: var(--main-paddding-top, 15px);
+    padding-bottom: var(--main-paddding-bottom, 15px);
+}
+
+.features .features-content {
+    margin-top: var(--main-margin, 99px);
+}
+
+.features .features-content .all-boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+@media (max-width:576px) {
+    .features .features-content .all-boxs {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+
+    }
+}
+
+/* Start Edit Any Div Containt Image , Info And More */
+.features .features-content .all-boxs>div {
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+    /* Start Edit Image */
+    & .image {
+        position: relative;
+        overflow: hidden;
+        /* clip-path: polygon(0 0, 100% 0, 100% 50%, 0 86%); */
+        transition: var(--main-transition, 0.5s);
+
+        & img {
+            max-width: 100%;
+        }
+    }
+
+    /* End Edit Image */
+
+    /* Start Edit Info */
+
+    & .info {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+        text-align: center;
+
+        & h3 {
+            text-transform: uppercase;
+            font-size: 22px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        & p {
+            margin: 5px 0 0;
+            text-transform: capitalize;
+            line-height: 1.9;
+            color: var(--p-color, red);
+            font-size: 17px;
+            font-weight: 500;
+            text-wrap: balance;
+        }
+    }
+
+    /* End Edit Info */
+}
+
+/* End Edit Any Div Containt Image , Info And More */
+
+
+/*Start  Edit Link More */
+.features .features-content .all-boxs>div .info div {
+    margin-bottom: 29px;
+
+    & a {
+        position: relative;
+        border-radius: 6px;
+        padding: 10px 35px;
+        border: 3px solid;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-transform: capitalize;
+        font-weight: bold;
+        font-size: 18px;
+        color: #F44036;
+        transition: var(--main-transition, 0.5s);
+        overflow: hidden;
+
+    }
+}
+
+/* Start Edit Color Of Links More */
+.features .features-content .all-boxs>div:nth-child(2) .info a {
+    color: #009688;
+
+}
+
+.features .features-content .all-boxs>div:nth-child(3) .info a {
+    color: #03A9F4;
+
+}
+
+/* End Edit Color Of Links More */
+
+
+/* Start  Link More Before Effect When I hover in it */
+.features .features-content .all-boxs>div .info a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #F44036ed;
+    left: -90px;
+    top: 0;
+    transition: var(--main-transition, 0.5s);
+    opacity: 0;
+}
+
+.features .features-content .all-boxs>div:hover .info a:before {
+    left: 0;
+    opacity: 1;
+    z-index: -1;
+}
+
+.features .features-content .all-boxs>div:hover:nth-child(2) .info a:before {
+    background-color: #009688;
+}
+
+.features .features-content .all-boxs>div:hover:nth-child(3) .info a:before {
+    background-color: #03A9F4;
+}
+
+/* End  Link More Before Effect When I hover in it */
+
+/* a Change Color When I hover In It */
+.features .features-content .all-boxs>div:hover .info a {
+    color: white;
+}
+
+/* End a Change Color When I hover In It */
+
+/* End Edit Link More */
+
+/* Start Blur For All Image USing Before */
+.features .features-content .all-boxs>div .image::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(242 125 119 / 50%);
+}
+
+.features .features-content .all-boxs div:nth-child(2) .image::before {
+    background-color: rgb(102 192 184 / 50%);
+}
+
+.features .features-content .all-boxs div:nth-child(3) .image::before {
+    background-color: rgb(58 157 203 /50%);
+}
+
+/* Image Fter To Do Clip-Path  */
+.features .features-content .all-boxs>div .image::after {
+    content: "";
+    position: absolute;
+    width: 104%;
+    height: 80%;
+    background: white;
+    z-index: 100;
+    bottom: 0;
+    left: 0;
+    clip-path: polygon(0 100%, 100% 100%, 100% 40%);
+    transition: var(--main-transition, 0.2s);
+}
+
+/* Image When I hover On div Contain Image , Info And More 
+To Change clip-path Image Fter
+*/
+
+.features .features-content .all-boxs>div:hover .image::after {
+    clip-path: polygon(0 100%, 100% 100%, 0 34%);
+    left: -2px;
+}
+
+/* End Blur For All Image USing After And Before */
+
+/* Start Line Under h3 Using Before */
+.features .features-content .all-boxs>div .info h3::before {
+    content: "";
+    position: absolute;
+    width: calc(100% - 14px);
+    height: 3px;
+    background-color: #F44036;
+    bottom: -17px;
+    left: 7px;
+}
+
+.features .features-content .all-boxs>div:nth-child(2) .info h3::before {
+    background-color: #009688;
+
+
+}
+
+.features .features-content .all-boxs>div:nth-child(3) .info h3::before {
+    background-color: #03A9F4;
+}
+
+/* End Line Under h3 Using Before */

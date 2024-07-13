@@ -1,0 +1,220 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #2196f3;
+    --p-color: #777;
+    --main-paddding-top: 100px;
+    --main-paddding-bottom: 100px;
+    --main-transition: 0.5s;
+    --main-margin: 93px;
+    --alt-color: #ececec;
+    --main-gap: 40px;
+    --main-line-height: 1.7;
+    --hover-color: #EDEDED;
+}
+
+*,
+html {
+    scroll-behavior: smooth !important;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    font-family: 'Jomhuria', serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Work Sans', sans-serif;
+
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(198, 12, 124);
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.886);
+}
+
+/* Edit Buton Up*/
+
+#up {
+    background-color: var(--main-color, blue);
+    position: fixed;
+    border: none;
+    bottom: 20px;
+    right: 20px;
+    color: white;
+    padding: 5px 8px;
+    cursor: pointer;
+    transition: 1s;
+    z-index: 1000;
+    display: none;
+
+    &:hover {
+        background-color: #0b528d;
+    }
+}
+
+/* Start Static Variable */
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Start Edit Title Of All Section  */
+.title {
+    width: fit-content;
+    margin: 0 auto;
+    transition: var(--main-transition, 0.5s);
+
+
+    & h2 {
+        margin: 0;
+        padding: 10px 15px;
+        border: 2px solid;
+        text-transform: uppercase;
+        font-weight: bold;
+        position: relative;
+        transition: 0.7s 0.1s;
+        z-index: 2;
+
+    }
+}
+
+@media (max-width:576px) {
+    .title h2 {
+        font-size: 15px;
+    }
+}
+
+.title h2::before,
+.title h2::after {
+    content: "";
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: var(--main-color, blue);
+    border-radius: 50%;
+    top: 50%;
+    translate: 0 -50%;
+    transition: 0.7s;
+}
+
+.title h2::before {
+    left: -15%;
+}
+
+.title h2::after {
+    right: -15%;
+}
+
+.title:hover h2::before {
+    width: 51%;
+    height: 100%;
+    left: 0;
+    border-radius: 0;
+    z-index: -1;
+}
+
+.title:hover h2::after {
+    width: 51%;
+    height: 100%;
+    right: 0;
+    border-radius: 0;
+    z-index: -1;
+
+}
+
+.title:hover {
+    border: 0;
+}
+
+.title:hover h2 {
+    color: white;
+}
+
+/* End Edit Title Of All Section  */
+
+/* Start background-dots */
+
+img.dots {
+    position: absolute;
+}
+
+@media (max-width:1200px) {
+    img.dots {
+        display: none;
+    }
+}
+
+img.dots:first-of-type {
+    bottom: 120px;
+    left: 0;
+}
+
+img.dots:nth-of-type(2) {
+    top: 120px;
+    right: 0;
+
+}
+
+/* End background-dots */
+
+/* Start Edit spikes before */
+.spikes::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: -0%;
+    top: 0;
+    z-index: 10;
+    display: block;
+    height: 30px;
+    background-size: 30px 100%;
+    background-image: linear-gradient(135deg, white 25%, transparent 25%), linear-gradient(225deg, white 25%, transparent 25%);
+    background-position: 0 0;
+}
+
+/* End Edit spikes before */
+/* End Static Variable */
+/* Start Container Rules */
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 17px;
+    padding-right: 17px;
+}
+
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Container Rules */

@@ -1,0 +1,162 @@
+.discount {
+    height: 100vh;
+}
+
+@media (max-width:991px) {
+    .discount {
+        height: revert;
+    }
+}
+
+/* Edit Discount-Content */
+
+.discount .discount-content {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+/* @media (max-width:991px) {
+    .discount .discount-content {
+        flex-direction: column;
+    }
+} */
+
+.discount .discount-content>div {
+    flex-basis: 50%;
+    text-align: center;
+    text-transform: capitalize;
+
+    & h3 {
+        font-size: 35px;
+        font-weight: bold;
+    }
+}
+
+@media (max-width:991px) {
+    .discount .discount-content>div {
+        flex-basis: 100% !important;
+    }
+}
+
+/* Start Edit discount-info */
+
+.discount .discount-content .discount-info {
+    position: relative;
+    z-index: 1;
+    background-image: url("../images/discount-background1.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: change-background 8s infinite;
+
+    & h3 {
+        color: white;
+        margin-bottom: 0;
+    }
+
+    & p {
+        color: white;
+        line-height: var(--main-line-height, 1.7);
+        max-width: 500px;
+        text-wrap: balance;
+        margin: 36px 0;
+    }
+
+    & img {
+        width: 300px;
+        aspect-ratio: 1 / 1;
+        max-width: 100%;
+    }
+}
+
+
+/* discint-info before */
+.discount .discount-content .discount-info::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgb(33 150 243 / 98%);
+}
+
+/* End Edit discount-info */
+
+/* Start Edit discount-request */
+
+.discount .discount-content .discount-request {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & .form {
+        padding: 50px 20px;
+
+        & h3 {
+            margin-bottom: 48px;
+        }
+
+        & .register {
+            & form {
+                & textarea {
+                    height: 200px;
+                    resize: none;
+                    border: none;
+                }
+
+                & textarea:focus {
+                    outline: none;
+                }
+
+                & input[type="submit"] {
+                    margin: 0 !important;
+                    background-color: var(--main-color, blue);
+                    color: white;
+                    font-size: 17px;
+                    font-weight: bold;
+                    padding: 12px;
+                    cursor: pointer;
+                    border: none !important;
+                }
+            }
+
+            & form>input,
+            & form>textarea {
+                display: block;
+                border-bottom: 1px solid #DDD;
+                margin-bottom: 34px;
+                width: 100%;
+                padding: 8px;
+                caret-color: var(--main-color, blue);
+            }
+
+            & form>input::placeholder,
+            & form>textarea::placeholder {
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+
+/* End Edit discount-request */
+
+@keyframes change-background {
+
+    0%,
+    100% {
+        background-image: url("../images/discount-background1.jpg");
+
+    }
+
+    50% {
+        background-image: url("../images/discount-background2.jpg");
+
+    }
+
+}

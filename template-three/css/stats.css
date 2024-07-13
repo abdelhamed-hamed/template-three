@@ -1,0 +1,107 @@
+.stats {
+    padding-top: var(--main-paddding-top, 15px);
+    padding-bottom: var(--main-paddding-bottom, 15px);
+    position: relative;
+    background-image: url("../images/stats.jpg");
+    background-size: cover;
+}
+
+.stats::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(255 255 255 / 95%);
+    z-index: 1;
+}
+
+.stats .container {
+    margin-top: var(--main-margin, 90px);
+    position: relative;
+    z-index: 1;
+}
+
+.stats .container>h2 {
+    text-align: center;
+    font-size: 31px;
+    text-transform: capitalize;
+    margin-bottom: 62px;
+    margin-top: -88px;
+    opacity: 0.9;
+}
+
+/* Start Edit box in stats-info */
+.stats .stats-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--main-gap, 40px);
+
+    & .box {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        gap: 20px;
+        padding: 25px;
+        opacity: 0.8;
+
+        & .stats-icon {
+            font-size: 26px;
+        }
+
+        & span:nth-child(2) {
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        & span:last-child {
+            text-transform: capitalize;
+            font-size: 23px;
+            font-weight: 500;
+            color: var(--main-color, blue);
+        }
+    }
+
+
+    /* Start box-hover */
+    & .box:hover {
+        opacity: 1;
+    }
+
+    /* Start box-before And after */
+    & .box::before,
+    & .box::after {
+        content: "";
+        position: absolute;
+        transition: height 0.8s;
+        width: 3px;
+        height: 0;
+        background-color: rgb(86 106 208);
+        z-index: 2;
+    }
+
+    /* Advantages Of before */
+    & .box::before {
+        left: 0;
+        bottom: 0;
+    }
+
+    /* Advantages Of after */
+    & .box::after {
+        right: 0;
+        top: 0;
+    }
+
+    /*before And after hover */
+    & .box:hover::before,
+    & .box:hover::after {
+        height: 100%;
+    }
+
+}
+
+/* End Edit box in stats-info */

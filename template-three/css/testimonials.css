@@ -1,0 +1,117 @@
+.testimonials {
+    padding-top: var(--main-paddding-bottom, 15px);
+    padding-bottom: var(--main-paddding-bottom, 15px);
+    background-color: var(--alt-color, #DDD);
+    position: relative;
+}
+
+.testimonials .container {
+    margin-top: var(--main-margin, 90px);
+}
+
+.testimonials .testimonials-content .all-boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--main-gap, 40px);
+}
+
+@media (max-width:300px) {
+    .testimonials .testimonials-content .all-boxs {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    }
+}
+
+/* Start Edit The ox Have All Thing */
+.testimonials .testimonials-content .all-boxs .box {
+    background-color: white;
+    position: relative;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 6px;
+
+    /* Start Edit Image */
+    & .image {
+        & img {
+            max-width: 100%;
+            width: 92px;
+            aspect-ratio: 1 / 1;
+            border-radius: 50%;
+            position: absolute;
+            top: calc(-92px / 2);
+            right: 0;
+            border: 10px solid var(--alt-color, #ececec);
+            z-index: 2;
+            right: -15px;
+        }
+    }
+
+    /* End Edit Image */
+
+    /* Start Edit main-info */
+    & .main-info {
+        & h2 {
+            font-size: 17px;
+            text-transform: capitalize;
+            font-weight: 700;
+            margin-top: 19px;
+            color: var(--main-color);
+        }
+    }
+
+    & h3 {
+        font-weight: 400;
+        text-transform: capitalize;
+        color: #6b4949;
+    }
+
+    /* End Edit main-info */
+
+    /*Start Edit Start  */
+    & .star {
+        display: flex;
+        gap: 8px;
+
+        & .star {
+            color: #FFC107;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+
+    /*End Edit Start  */
+    & p:last-child {
+        text-transform: capitalize;
+        line-height: 1.8;
+        color: var(--p-color, #777);
+        margin-top: 22px;
+        font-size: 15px;
+        text-wrap: balance;
+        margin-bottom: 0;
+    }
+}
+
+/* End Edit The ox Have All Thing */
+
+/* Edit Media removing image */
+@media (max-width:300px) {
+    .testimonials .testimonials-content .all-boxs .box .image {
+        display: none;
+    }
+}
+
+/* End Edit Media Margin For h2  */
+
+/* Start Edit Start dosnot Take A background-color */
+.testimonials .testimonials-content .all-boxs .box:not(:nth-child(4)) .star.star:last-of-type {
+    color: black;
+    font-weight: 500 !important;
+}
+
+.testimonials .testimonials-content .all-boxs .box:nth-child(5) .star.star:nth-last-child(2),
+.testimonials .testimonials-content .all-boxs .box:nth-child(6) .star.star:nth-last-child(2) {
+    color: black;
+    font-weight: 500 !important;
+}
+
+/* End Edit Start dosnot Take A background-color */

@@ -1,0 +1,164 @@
+.team-members {
+    padding-top: var(--main-paddding-bottom, 15px);
+    padding-bottom: var(--main-paddding-bottom, 15px);
+}
+
+.team-members .container {
+    margin-top: var(--main-margin, 90px);
+}
+
+.team-members .team-members-content .all-boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--main-gap, 40px);
+}
+
+@media (max-width:300px) {
+    .team-members .team-members-content .all-boxs {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    }
+}
+
+/*Start Edit Any Box  */
+.team-members .team-members-content .all-boxs .box {
+    width: fit-content;
+    position: relative;
+    transition: var(--main-transition, 0.5s);
+
+
+    /* Start Edit Image-icon */
+
+    & .image-icon {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-top: 48px;
+        justify-content: center;
+        padding-right: 6px;
+
+        & img {
+            width: calc(100% - 50px);
+            max-width: 100%;
+            border-radius: 8px;
+            transition: var(--main-transition, 0.5s);
+        }
+
+        /* Start Edit Contact div ANd Icon In It */
+
+        & .contact {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            flex-direction: column;
+            width: 50px;
+
+            & .contact-icon {
+                font-size: 19px;
+                color: var(--p-color, red);
+                transition: var(--main-transition, 0.5s);
+            }
+        }
+
+        /* End Edit Contact div ANd Icon In It */
+    }
+
+    /* End Edit Image-icon */
+
+    /* Start Edit main-info */
+
+    & .main-info {
+        padding-left: 86px;
+        /* Start Edit h3 And p */
+        /* Start Edit h3  */
+
+        & h3 {
+            color: var(--main-color, blue);
+            text-transform: capitalize;
+            font-size: 23px;
+            font-weight: bold;
+            transition: var(--main-transition, 0.5s);
+            margin-bottom: 0;
+            margin-top: 28px;
+        }
+
+        /* End Edit h3  */
+
+        /* Start Edit p */
+
+        & p {
+            text-transform: capitalize;
+            margin: 4px 0 29px;
+        }
+
+        /* ENd Edit p */
+
+        /* End Edit h3 And p */
+    }
+
+    /* End Edit main-info */
+
+}
+
+/*End Edit Any Box  */
+
+
+/* Start Before background  */
+
+.team-members .team-members-content .all-boxs .box::before {
+    content: "";
+    position: absolute;
+    width: calc(100% - 63px);
+    height: 100%;
+    background: var(--alt-color, #ececec);
+    right: 0;
+    top: 0;
+    z-index: -2;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* End Before background   */
+
+/* Start End Layer */
+.team-members .team-members-content .all-boxs .box::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    background-color: #e4e4e4;
+    right: 0;
+    top: 0;
+    z-index: -3;
+    transition: var(--main-transition, 0.5s);
+    border-radius: 8px;
+}
+
+.team-members .team-members-content .all-boxs .box:hover::after {
+    z-index: -1;
+    width: calc(100% - 63px);
+}
+
+
+/* End End Layer * /
+
+/* Start All Edit On hover Image And All Element */
+
+/* h3  hover */
+.team-members .team-members-content .all-boxs .box:hover h3 {
+    color: var(--p-color, #777);
+}
+
+/* Image hover */
+.team-members .team-members-content .all-boxs .box:hover img {
+    filter: grayscale(100%);
+}
+
+/* ENd All Edit On hover Image And All Element */
+
+/* Start icon-contact hover  */
+.team-members .team-members-content .all-boxs .box .image-icon .contact .contact-icon:hover {
+    color: var(--main-color, blue);
+}
+
+/* End icon-contact hover  */

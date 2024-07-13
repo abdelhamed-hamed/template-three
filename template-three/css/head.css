@@ -1,0 +1,195 @@
+header {
+    background-color: #FFFFFF;
+}
+
+/*Start Heade Edit */
+header .head-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    text-transform: capitalize;
+    height: 72px;
+}
+
+@media (max-width:767px) {
+    header .head-content {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+}
+
+header .logo {
+    text-transform: uppercase;
+    color: var(--main-color, blue);
+    font-weight: bold;
+    font-size: 20px;
+    height: 72px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width:767px) {
+    header .logo {
+        height: 40px;
+    }
+}
+
+.head-content nav {
+    & .main-nav {
+        display: flex;
+        /* flex-wrap: wrap; */
+        gap: 10px;
+        overflow: hidden;
+    }
+}
+
+.head-content nav .main-nav>li>a {
+    color: #666;
+    font-size: 17px;
+    padding: 0 18px;
+    position: relative;
+    height: 72px;
+    display: flex;
+    transition: var(--main-transition, 0.5s);
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+@media (max-width:767px) {
+    .head-content nav .main-nav>li>a {
+        padding: 10px;
+        position: relative;
+        height: 40px;
+    }
+}
+
+.head-content nav .main-nav>li>a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--main-color, blue);
+    left: -131px;
+    top: 0;
+    transition: var(--main-transition, 0.5s);
+}
+
+/* Media To Reduce Padding And Font Size In Small Screen */
+@media (max-width:567px) {
+    .head-content nav .main-nav>li>a {
+        font-size: 13px;
+        padding: 10px 2px;
+    }
+}
+
+
+/*  border when i hover on a */
+.head-content nav .main-nav>li>a:hover {
+    background-color: #fafafa;
+}
+
+.head-content nav .main-nav>li>a:hover:before {
+    left: 0;
+}
+
+/* Start Edit Mega Menu */
+.head-content nav .mega-menu {
+    position: absolute;
+    top: calc(100% + 50px);
+    left: -17px;
+    width: calc(100% + 34px);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 17px;
+    background-color: white;
+    border-bottom: 3px solid var(--main-color, blue);
+    transition: top var(--main-transition, 0.5s), opacity var(--main-transition, 0.5s);
+    opacity: 0;
+}
+
+/* Media To Make Flex-direction column At maxwidth 767px */
+@media (max-width:767px) {
+    .head-content nav .mega-menu {
+        flex-direction: column;
+    }
+}
+
+/* Media To EDit Gap Between Elemtnt From 768px to 991px */
+@media (max-width:991px) {
+    .head-content nav .mega-menu {
+        gap: 0;
+    }
+}
+
+
+/* TO hover Other Link And MegaMenu */
+.head-content nav .main-nav li .other-link:hover+.mega-menu {
+    top: 100%;
+    opacity: 1;
+    z-index: 2;
+}
+
+/* Mega Menu Image  */
+.head-content nav .mega-menu .image {
+    & img {
+        max-width: 100%;
+    }
+}
+
+/* Media To Disappeaer Image At 991px */
+@media (max-width:991px) {
+    .head-content nav .mega-menu .image {
+        display: none;
+    }
+}
+
+/* Mega Menu Width Div without image */
+.head-content nav .mega-menu>div:not(.image) {
+    min-width: 250px;
+    flex: 1;
+}
+
+/* Mega Menu Ul Ang Li */
+.head-content nav .mega-menu div ul {
+    padding: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    & li {
+        text-transform: capitalize;
+        font-weight: bold;
+
+        & a {
+            color: var(--main-color, black);
+            font-size: 16px !important;
+            position: revert !important;
+            padding: 11px;
+            display: block;
+
+        }
+
+        & .header-icon {
+            padding-right: 13px;
+            font-weight: 900;
+        }
+    }
+}
+
+@media (max-width:767px) {
+    .head-content nav .mega-menu a[href="how it works"] {
+        border-bottom: 1px solid #e8e8e8 !important;
+        ;
+    }
+}
+
+.head-content nav .mega-menu div ul li:not(:last-child) {
+    border-bottom: 1px solid #e8e8e8;
+}
+
+/* End Edit Mega Menu */
+/*End Heade Edit */

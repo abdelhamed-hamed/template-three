@@ -1,0 +1,116 @@
+.videos {
+    padding-top: var(--main-paddding-top, 15px);
+    padding-bottom: var(--main-paddding-bottom, 15px);
+    position: relative;
+    --main-box-video-padding: 20px;
+}
+
+
+.videos .container {
+    margin-top: var(--main-margin, 90px);
+}
+
+.videos .videos-content .main-box {
+    display: flex;
+}
+
+@media (max-width:991px) {
+    .videos .videos-content .main-box {
+        flex-direction: column;
+    }
+}
+
+/* Start Edit video-info */
+.videos .videos-content .main-box .video-info {
+    border: 1px solid var(--alt-color, #ddd);
+    border-radius: 2px;
+
+    /* Edit section-title */
+    & .section-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding: var(--main-box-video-padding, 20px);
+        background: #F4F4F4;
+
+        & h2 {
+            margin: 0;
+            font-size: 17px;
+            text-transform: capitalize;
+            font-weight: 600;
+        }
+
+    }
+
+    /* Edit box */
+    & .box {
+        padding: var(--main-box-video-padding, 20px);
+        border-bottom: 1px solid var(--alt-color, #ddd);
+        cursor: pointer;
+
+        & p {
+            text-wrap: nowrap;
+            font-weight: 400;
+            font-size: 16px;
+            max-width: 100%;
+            text-transform: capitalize;
+            margin: 0 0 12px;
+            transition: var(--main-transition, 0.5s);
+        }
+
+        & span {
+            color: var(--p-color);
+            font-size: 13px;
+            text-transform: capitalize;
+        }
+    }
+
+    & .box:hover {
+        & p {
+            color: var(--main-color, blue);
+        }
+    }
+}
+
+.hide {
+    display: none;
+}
+
+/* To Prevent text-wrap:nowrap on small screens */
+@media (max-width:350px) {
+    .videos .videos-content .main-box .video-info .box p {
+        text-wrap: revert;
+        font-size: 12px;
+    }
+}
+
+@media (max-width:350px) {
+    .videos .videos-content .main-box .video-info .box span {
+        font-size: 11px;
+    }
+}
+
+/* Start Edit video-preview */
+.videos .videos-content .main-box .video-preview {
+    background-color: var(--alt-color, #ddd);
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    & img {
+        max-width: 100%;
+    }
+
+    & .about-video {
+        background-color: white;
+        padding: 6px 10px 8px 22px;
+        margin-top: 97px;
+
+        & p {
+            text-transform: capitalize;
+            font-size: 14px;
+        }
+    }
+}

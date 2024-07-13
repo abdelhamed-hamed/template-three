@@ -1,0 +1,143 @@
+.services {
+    padding-top: var(--main-paddding-top, 15px);
+    padding-bottom: var(--main-paddding-bottom, 15px);
+    position: relative;
+    background-color: var(--alt-color, #ececec);
+}
+
+.services .container {
+    margin-top: var(--main-margin, 90px);
+}
+
+.services .services-content .all-boxs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--main-gap, 40px);
+
+}
+
+@media (max-width:300px) {
+    .services .services-content .all-boxs {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    }
+}
+
+/* Start Edit Any Box */
+
+.services .services-content .all-boxs .box {
+    background: white;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    transition: var(--main-transition, 0.5s);
+    counter-increment: service-counter;
+
+    /* Start Edit info icon and h3 */
+
+    & .info {
+        text-align: center;
+
+        /* Edit icon */
+        & .service-icon {
+            display: block;
+            margin: 55px auto 3px;
+            color: #D5D5D5;
+            font-weight: bold;
+            font-size: 63px;
+        }
+
+        /* Edit h3 */
+        & h3 {
+            color: var(--main-color, blue);
+            text-transform: capitalize;
+            font-weight: bold;
+            font-size: 25px;
+            margin-bottom: 40px;
+        }
+    }
+
+    /* End Edit info icon and h3 */
+
+    /* Edit Details  */
+
+    & .details {
+        padding: 18px 22px 18px 0;
+        padding-right: 22px;
+        display: flex;
+        justify-content: end;
+        background-color: #fff3f3;
+        position: relative;
+
+
+        & a {
+            color: var(--main-color);
+            text-transform: capitalize;
+            font-weight: 500;
+        }
+    }
+}
+
+
+
+/* End Edit Any Box */
+
+/* Start Box hover translate and Line Before */
+
+/* translate hover */
+.services .services-content .all-boxs .box:hover {
+    transform: translateY(-10px);
+}
+
+/* line before */
+.services .services-content .all-boxs .box::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    width: 0;
+    height: 3px;
+    left: 50%;
+    background-color: var(--main-color, blue);
+    top: -3px;
+    transition: var(--main-transition, 0.5s);
+}
+
+.services .services-content .all-boxs .box:hover:before {
+    left: 0;
+    width: 100%;
+}
+
+/* End Box hover translate and Line Before */
+
+/* Start details before and after , before using counter */
+.services .services-content .all-boxs .box .details::before {
+    content: "0" counter(service-counter);
+    position: absolute;
+    left: 0;
+    width: 25%;
+    background-color: var(--main-color, blue);
+    height: 100%;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 27px;
+    font-weight: 600;
+    clip-path: polygon(0 0, 100% 0%, 76% 100%, 0 100%);
+    z-index: 3;
+}
+
+.services .services-content .all-boxs .box .details::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 17%;
+    top: 0;
+    width: 22%;
+    background-color: #D5D5D5;
+    transform: skewX(337deg);
+    z-index: 2;
+}
+
+/* End details before and after , before using counter */

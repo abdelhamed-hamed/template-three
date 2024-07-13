@@ -1,0 +1,101 @@
+.skills {
+    padding-top: var(--main-paddding-top, 15px);
+    padding-bottom: var(--main-paddding-bottom, 15px);
+    position: relative;
+    background-color: white;
+}
+
+.skills .container {
+    margin-top: var(--main-margin, 90px);
+}
+
+
+/* Start Edit Box With All COntent  */
+.skills .skills-content .box {
+    display: flex;
+    gap: var(--main-gap, 40px);
+
+    /* Edit Image  */
+    & img {
+        max-width: 100%;
+    }
+
+    /* Edit Skills Level  */
+    & .skills-level {
+        display: flex;
+        flex-direction: column;
+        gap: var(--main-gap, 40px);
+        justify-content: space-around;
+        width: 100%;
+        flex: 1;
+
+        /* Edit h3 */
+        & h3 {
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        & div div {
+            position: relative;
+
+            & span {
+                position: relative;
+                height: 30px;
+                background-color: var(--main-color, blue);
+                display: block;
+            }
+        }
+
+    }
+}
+
+
+/* End Edit Box With All COntent  */
+
+/* display none for photo */
+@media (max-width:991px) {
+    .skills .skills-content .box img {
+        display: none;
+    }
+}
+
+/* larging gap between h2  */
+@media (max-width:767px) {
+    .skills .skills-content .box .skills-level {
+        gap: var(--main-gap, 40px);
+    }
+}
+
+/* Start Edit Skilllevels before and after */
+/* Start before */
+.skills .skills-content .box .skills-level>div>div::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--alt-color, #DDD);
+}
+
+.skills .skills-content .box .skills-level>div>div::after {
+    content: attr(skill-level);
+    position: absolute;
+    width: fit-content;
+    aspect-ratio: 1 / 1;
+    right: 0;
+    top: -128%;
+    font-size: 12px;
+    background: white;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 7px;
+    border-radius: 7px;
+    border: 1px solid var(--main-color, blue);
+}
+
+/* End before */
+/* ENd Edit Skilllevels before and after */

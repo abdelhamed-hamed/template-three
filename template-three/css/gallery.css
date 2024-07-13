@@ -1,0 +1,78 @@
+.gallery {
+    padding-top: var(--main-paddding-top, 15px);
+    padding-bottom: var(--main-paddding-bottom, 15px);
+    position: relative;
+    background-color: var(--alt-color, #ececec);
+}
+
+
+.gallery .container {
+    margin-top: var(--main-margin, 90px);
+}
+
+.gallery .gallery-content>div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--main-gap, 40px);
+}
+
+@media (max-width:300px) {
+    .gallery .gallery-content>div {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+    }
+}
+
+.gallery .gallery-content>div .box {
+    background-color: white;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.gallery .gallery-content>div .box>div {
+    overflow: hidden;
+    position: relative;
+
+    & img {
+        max-width: 100%;
+        transition: var(--main-transition, 0.5s);
+    }
+}
+
+.gallery .gallery-content>div .box>div::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    opacity: 0;
+    background-color: rgb(255 255 255 / 20%);
+    transition: var(--main-transition, 0.5s);
+    z-index: 2;
+}
+
+.gallery .gallery-content>div>.box:hover>div::before {
+    width: 200%;
+    height: 200%;
+    animation: flash 0.8s;
+}
+
+.gallery .gallery-content>div .box:hover img {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* Flashing Animation */
+@keyframes flash {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
